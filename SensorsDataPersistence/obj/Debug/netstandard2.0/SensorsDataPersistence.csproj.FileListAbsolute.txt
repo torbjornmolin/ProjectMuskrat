@@ -1,0 +1,9 @@
+/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/obj/Debug/netstandard2.0/SensorsDataPersistence.csprojAssemblyReference.cache
+/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/obj/Debug/netstandard2.0/SensorsDataPersistence.csproj.CoreCompileInputs.cache
+/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/obj/Debug/netstandard2.0/SensorsDataPersistence.AssemblyInfoInputs.cache
+/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/obj/Debug/netstandard2.0/SensorsDataPersistence.AssemblyInfo.cs
+/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/bin/Debug/netstandard2.0/SensorsDataPersistence.deps.json
+/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/bin/Debug/netstandard2.0/SensorsDataPersistence.dll
+/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/bin/Debug/netstandard2.0/SensorsDataPersistence.pdb
+/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/obj/Debug/netstandard2.0/SensorsDataPersistence.dll
+/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/obj/Debug/netstandard2.0/SensorsDataPersistence.pdb

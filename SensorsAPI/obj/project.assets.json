@@ -4333,6 +4333,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "SensorsDataPersistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SensorsDataPersistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SensorsDataPersistence.dll": {}
+        }
       }
     }
   },
@@ -11793,13 +11803,19 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "SensorsDataPersistence/1.0.0": {
+      "type": "project",
+      "path": "../SensorsDataPersistence/SensorsDataPersistence.csproj",
+      "msbuildProject": "../SensorsDataPersistence/SensorsDataPersistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "SensorsDataPersistence >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11809,11 +11825,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/torbjorn/Documents/skolprojekt/SensorsAPI/SensorsAPI.csproj",
+      "projectUniqueName": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsAPI/SensorsAPI.csproj",
       "projectName": "SensorsAPI",
-      "projectPath": "/home/torbjorn/Documents/skolprojekt/SensorsAPI/SensorsAPI.csproj",
+      "projectPath": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsAPI/SensorsAPI.csproj",
       "packagesPath": "/home/torbjorn/.nuget/packages/",
-      "outputPath": "/home/torbjorn/Documents/skolprojekt/SensorsAPI/obj/",
+      "outputPath": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsAPI/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -11829,7 +11845,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/SensorsDataPersistence.csproj": {
+              "projectPath": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/SensorsDataPersistence.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

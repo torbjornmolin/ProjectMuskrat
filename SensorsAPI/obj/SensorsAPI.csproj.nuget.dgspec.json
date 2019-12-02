@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/torbjorn/Documents/skolprojekt/SensorsAPI/SensorsAPI.csproj": {}
+    "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsAPI/SensorsAPI.csproj": {}
   },
   "projects": {
-    "/home/torbjorn/Documents/skolprojekt/SensorsAPI/SensorsAPI.csproj": {
+    "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsAPI/SensorsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/torbjorn/Documents/skolprojekt/SensorsAPI/SensorsAPI.csproj",
+        "projectUniqueName": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsAPI/SensorsAPI.csproj",
         "projectName": "SensorsAPI",
-        "projectPath": "/home/torbjorn/Documents/skolprojekt/SensorsAPI/SensorsAPI.csproj",
+        "projectPath": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsAPI/SensorsAPI.csproj",
         "packagesPath": "/home/torbjorn/.nuget/packages/",
-        "outputPath": "/home/torbjorn/Documents/skolprojekt/SensorsAPI/obj/",
+        "outputPath": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsAPI/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -27,7 +27,11 @@
         },
         "frameworks": {
           "netcoreapp2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/SensorsDataPersistence.csproj": {
+                "projectPath": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/SensorsDataPersistence.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -53,6 +57,56 @@
             "Microsoft.NETCore.App": {
               "target": "Package",
               "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/SensorsDataPersistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/SensorsDataPersistence.csproj",
+        "projectName": "SensorsDataPersistence",
+        "projectPath": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/SensorsDataPersistence.csproj",
+        "packagesPath": "/home/torbjorn/.nuget/packages/",
+        "outputPath": "/home/torbjorn/Documents/skolprojekt/ProjectMuskrat/SensorsDataPersistence/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/torbjorn/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
               "autoReferenced": true
             }
           },

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SensorsDataPersistence;
 
 namespace SensorsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class SensorValueController : ControllerBase
     {
         // GET api/values
         [HttpGet]
@@ -17,11 +18,12 @@ namespace SensorsAPI.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/values/5
+        // GET api/values/guid
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<SensorsData> Get(Guid id)
         {
-            return "value";
+            IDataAccess dataAccess = new DataAccess();
+            return dataAccess.GetSensorsData(id);
         }
 
         // POST api/values
