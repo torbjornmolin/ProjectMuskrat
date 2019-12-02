@@ -4,7 +4,7 @@ namespace SensorsDataPersistence
 {
     public interface IDataAccess
     {
-        void SaveSensorData(SensorsData sensorsData);
-        SensorsData GetSensorsData(Guid guid);
+        void SaveSensorData(SensorData sensorsData);
+        SensorData GetSensorData(Guid guid);
     }
 }

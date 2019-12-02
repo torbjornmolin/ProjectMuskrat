@@ -20,22 +20,25 @@ namespace SensorsAPI.Controllers
 
         // GET api/values/guid
         [HttpGet("{id}")]
-        public ActionResult<SensorsData> Get(Guid id)
+        public ActionResult<SensorData> Get(Guid guid)
         {
             IDataAccess dataAccess = new DataAccess();
-            return dataAccess.GetSensorsData(id);
+            return dataAccess.GetSensorData(guid);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] SensorData value)
         {
+            IDataAccess dataAccess = new DataAccess();
+            dataAccess.SaveSensorData(value);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+
         }
 
         // DELETE api/values/5

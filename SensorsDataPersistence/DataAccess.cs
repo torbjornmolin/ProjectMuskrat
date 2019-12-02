@@ -1,22 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SensorsDataPersistence
 {
     public class DataAccess : IDataAccess
     {
-        public SensorsData GetSensorsData(Guid guid) => new SensorsData()
-        {
-            Identifier = Guid.NewGuid(),
-            SensorId = 1,
-            SavedAt = DateTime.UtcNow,
-            Value = 23,
-            ValueType = SensorValueType.DegreesCelsius
-        };
+        private static List<SensorData> data = null;
+        public string Path { get; set; }
 
-
-        public void SaveSensorData(SensorsData sensorsData)
+        public DataAccess()
         {
-            throw new NotImplementedException();
+            if (data == null) data = new List<SensorData>();
+        }
+        public SensorData GetSensorData(Guid guid)
+        {
+            var returnData = data.Where(d => d.Identifier == guid).FirstOrDefault();
+            return returnData;
+            //new SensorData() { Identifier = Guid.NewGuid(), SensorId = 1, SavedAt = DateTime.UtcNow, Value = 23, ValueType = SensorValueType.DegreesCelsius };
+        }
+        public void SaveSensorData(SensorData sensorsData)
+        {
+            data.Add(sensorsData);
         }
     }
 }

@@ -2,7 +2,7 @@ using System;
 
 namespace SensorsDataPersistence
 {
-    public class SensorsData
+    public class SensorData
     {
         public Guid Identifier { get; set; }
         public int SensorId { get; set; }
