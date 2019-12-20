@@ -11,7 +11,7 @@ namespace SensorsAPI.Controllers
     [ApiController]
     public class SensorValueController : ControllerBase
     {
-        static IDataAccess dataAccess = new DataAccess();
+        static IDataAccess dataAccess = new DataAccess("/home/torbjorn/sensorData.json");
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
