@@ -11,27 +11,27 @@ namespace SensorsAPI.Controllers
     [ApiController]
     public class SensorValueController : ControllerBase
     {
+        static IDataAccess dataAccess = new DataAccess();
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(dataAccess.GetAllData());
         }
 
         // GET api/values/guid
         [HttpGet("{id}")]
-        public ActionResult<SensorData> Get(Guid guid)
+        public ActionResult<SensorData> Get(Guid? id)
         {
-            IDataAccess dataAccess = new DataAccess();
-            return dataAccess.GetSensorData(guid);
+            return dataAccess.GetSensorData(id.Value);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] SensorData value)
+        public SensorData Post([FromBody] SensorData value)
         {
-            IDataAccess dataAccess = new DataAccess();
             dataAccess.SaveSensorData(value);
+            return value;
         }
 
         // PUT api/values/5

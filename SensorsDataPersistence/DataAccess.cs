@@ -23,5 +23,10 @@ namespace SensorsDataPersistence
         {
             data.Add(sensorsData);
         }
+
+        public IEnumerable<SensorData> GetAllData()
+        {
+            return data;
+        }
     }
 }
