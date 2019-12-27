@@ -58,7 +58,7 @@ namespace SensorsDataPersistence
             using (StreamReader streamReader = new StreamReader(@fileName))
             using (JsonReader jsonReader = new JsonTextReader(streamReader))
             {
-                data = serializer.Deserialize(jsonReader) as List<SensorData>;
+                data = serializer.Deserialize(jsonReader, typeof(List<SensorData>)) as List<SensorData>;
             }
         }
     }
