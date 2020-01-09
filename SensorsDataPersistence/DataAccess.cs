@@ -7,33 +7,33 @@ using Newtonsoft.Json.Converters;
 
 namespace SensorsDataPersistence
 {
-    public class DataAccess : IDataAccess
+    public class DataAccess<T> : IDataAccess<T> where T : IDataEntry
     {
-        private static List<SensorData> data = null;
+        private static List<T> data = null;
         public string Path { get; set; }
 
         readonly string fileName;
         public DataAccess(string fileName)
         {
-            if (data == null) data = new List<SensorData>();
+            if (data == null) data = new List<T>();
             this.fileName = fileName;
             if (System.IO.File.Exists(@fileName))
             {
                 LoadDataFromDisc();
             }
         }
-        public SensorData GetSensorData(Guid guid)
+        public T GetData(Guid guid)
         {
             var returnData = data.Where(d => d.Identifier == guid).FirstOrDefault();
             return returnData;
         }
-        public void SaveSensorData(SensorData sensorsData)
+        public void SaveData(T entrie)
         {
-            data.Add(sensorsData);
+            data.Add(entrie);
             SaveDataToDisc();
         }
 
-        public IEnumerable<SensorData> GetAllData()
+        public IEnumerable<T> GetAllData()
         {
             return data;
         }
@@ -58,7 +58,7 @@ namespace SensorsDataPersistence
             using (StreamReader streamReader = new StreamReader(@fileName))
             using (JsonReader jsonReader = new JsonTextReader(streamReader))
             {
-                data = serializer.Deserialize(jsonReader, typeof(List<SensorData>)) as List<SensorData>;
+                data = serializer.Deserialize(jsonReader, typeof(List<T>)) as List<T>;
             }
         }
     }

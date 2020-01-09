@@ -11,7 +11,7 @@ namespace SensorsAPI.Controllers
     [ApiController]
     public class SensorValueController : ControllerBase
     {
-        static IDataAccess dataAccess = new DataAccess("/home/torbjorn/sensorData.json");
+        static IDataAccess<SensorData> dataAccess = new DataAccess<SensorData>("/home/torbjorn/sensorData.json");
         // GET api/SensorValues
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -23,7 +23,7 @@ namespace SensorsAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<SensorData> Get(Guid? id)
         {
-            return dataAccess.GetSensorData(id.Value);
+            return dataAccess.GetData(id.Value);
         }
         // GET api/SensorValues/by/date
         [HttpGet("by/date/{id}")]
@@ -43,7 +43,7 @@ namespace SensorsAPI.Controllers
                 Value = value.Value,
                 ValueType = value.ValueType,
             };
-            dataAccess.SaveSensorData(sensorData);
+            dataAccess.SaveData(sensorData);
             return sensorData;
         }
 
