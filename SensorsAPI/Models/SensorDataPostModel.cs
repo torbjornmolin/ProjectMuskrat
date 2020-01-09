@@ -1,8 +1,9 @@
-using System;
-
-public class SensorDataPostModel
+namespace SensorsAPI.Models
 {
-    public int SensorId { get; set; }
-    public double Value { get; set; }
-    public SensorValueType ValueType { get; set; }
+    public class SensorDataPostModel
+    {
+        public int SensorId { get; set; }
+        public double Value { get; set; }
+        public SensorValueType ValueType { get; set; }
+    }
 }
