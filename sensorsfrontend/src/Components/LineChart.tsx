@@ -1,7 +1,13 @@
 import * as React from "react";
 import Chart from "chart.js";
 
-export interface ILineChartProps {}
+export interface IDataPoint {
+  time: Date;
+  value: number;
+}
+export interface ILineChartProps {
+  data: Array<IDataPoint>;
+}
 
 export default class LineChart extends React.Component<ILineChartProps> {
   private canvasRef = React.createRef<HTMLCanvasElement>();
@@ -18,27 +24,32 @@ export default class LineChart extends React.Component<ILineChartProps> {
         options: {
           maintainAspectRatio: false,
           scales: {
+            xAxes: [
+              {
+                type: "time",
+                time: {
+                  unit: "day"
+                }
+              }
+            ],
             yAxes: [
               {
                 ticks: {
-                  min: 0,
-                  max: 100
+                  min: -15,
+                  max: 30
                 }
               }
             ]
           }
         },
         data: {
-          labels: ["A", "B", "C", "D", "E"],
+          labels: this.props.data.map(d => d.time.toUTCString()),
           datasets: [
             {
-              label: "My data",
-              data: [10, 20, 30, 40, 50],
-              backgroundColor: "#112233",
+              data: this.props.data.map(d => d.value),
               fill: "none",
-              pointRadius: 2,
-              borderWidth: 1,
-              lineTension: 1
+              label: "Temperature",
+              backgroundColor: "#ff9999"
             }
           ]
         }
