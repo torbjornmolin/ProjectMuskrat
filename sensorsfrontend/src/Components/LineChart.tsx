@@ -1,5 +1,6 @@
 import * as React from "react";
 import Chart from "chart.js";
+import { DataFetcher } from "../Classes/DataFetcher";
 
 export interface IDataPoint {
   time: Date;
@@ -18,6 +19,9 @@ export default class LineChart extends React.Component<ILineChartProps> {
   }
 
   private SetUpChart() {
+    var fetcher = new DataFetcher();
+    console.log(fetcher.GetData());
+
     if (this.canvasRef.current) {
       this.myChart = new Chart(this.canvasRef.current, {
         type: "line",
