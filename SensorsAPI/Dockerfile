@@ -1,4 +1,6 @@
-#run from ../ with docker build -f SensorsAPI/Dockerfile -t sensorsapi .
+#How to use:
+#run from ../ with "docker build -f SensorsAPI/Dockerfile -t sensorsapi ."
+#save image with "docker save -o ./sensorsapi.tar sensorsapi"
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /app
 

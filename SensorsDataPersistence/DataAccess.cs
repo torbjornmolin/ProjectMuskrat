@@ -10,9 +10,9 @@ namespace SensorsDataPersistence
     public class DataAccess<T> : IDataAccess<T> where T : IDataEntry
     {
         private static List<T> data = null;
-        public string Path { get; set; }
 
         readonly string fileName;
+
         public DataAccess(string fileName)
         {
             if (data == null) data = new List<T>();
