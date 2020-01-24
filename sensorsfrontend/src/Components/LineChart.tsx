@@ -7,7 +7,7 @@ export interface IDataPoint {
   value: number;
 }
 export interface ILineChartProps {
-  data: Array<IDataPoint>;
+  data: Promise<Array<IDataPoint>>;
 }
 
 export default class LineChart extends React.Component<ILineChartProps> {
@@ -20,8 +20,13 @@ export default class LineChart extends React.Component<ILineChartProps> {
 
   private SetUpChart() {
     var fetcher = new DataFetcher();
-    console.log(fetcher.GetData());
-
+    fetcher.GetData().then(d => {
+      console.log("GetData:");
+      console.log(d);
+      this.RenderCanvas(d);
+    });
+  }
+  private RenderCanvas(data: IDataPoint[]) {
     if (this.canvasRef.current) {
       this.myChart = new Chart(this.canvasRef.current, {
         type: "line",
@@ -40,17 +45,17 @@ export default class LineChart extends React.Component<ILineChartProps> {
               {
                 ticks: {
                   min: -15,
-                  max: 30
+                  max: 80
                 }
               }
             ]
           }
         },
         data: {
-          labels: this.props.data.map(d => d.time.toUTCString()),
+          labels: data.map(d => new Date(d.time).toISOString()),
           datasets: [
             {
-              data: this.props.data.map(d => d.value),
+              data: data.map(d => d.value),
               fill: "none",
               label: "Temperature",
               backgroundColor: "#ff9999"
