@@ -4,11 +4,13 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SensorsDataPersistence;
 using SensorsAPI.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace SensorsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class DeviceController : ControllerBase
     {
         static IDataAccess<DeviceData> dataAccess = new DataAccess<DeviceData>("/home/torbjorn/deviceData.json");

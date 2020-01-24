@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using SensorsAPI.Models;
 using SensorsDataPersistence;
@@ -9,6 +10,7 @@ namespace SensorsAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class SensorValueController : ControllerBase
     {
         const string PathEnvironmentVariable = "SENSOR_DATA_FILE";
